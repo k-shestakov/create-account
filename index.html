@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+
+            <div class="form__wrapper">
+                <div class="form__title">
+                    Create you account
+                </div>
+                <div class="form__form">
+                    <form name="create" class="form-action">
+                        <div class="firstName">
+                            <p class="firstName__title option">First Name</p>
+                            <input required class="input" placeholder="type here..." type="text" name="firstName">
+                        </div>
+                        <div class="secondName">
+                            <p class="secondName__title option">Second Name</p>
+                            <input required class="input" placeholder="type here..." type="text" name="secondName">
+                        </div>
+                        <div class="userEmail">
+                            <p class="userEmail__title option">Email address</p>
+                            <input class="input" placeholder="enter email" type="email" name="userEmail" required>
+                        </div>
+                        <div class="radioSex">
+                            <label class="sex" for="menSex">
+                                <input class="sex__input" checked id="menSex" type="radio" name="sex" value="man">
+                                man
+                            </label>
+                            <label class="sex" for="womenSex">
+                                <input class="sex__input" id="womenSex" type="radio" name="sex" value="women">
+                                women
+                            </label>
+                        </div>
+                        <div class="selectPosition">
+                            <p class="position__title option">Position</p>
+                            <select class="select__position" name="position">
+                                <option selected value="non">Choose...</option>
+                                <option value="frond-end">Front-end</option>
+                                <option value="back-end">Back-end</option>
+                                <option value="qc-qa">QC/QA</option>
+                            </select>
+                        </div>
+                        <div class="checkboxAgree">
+                            <label for="agreePass" style="cursor: pointer;">
+                                <input class="checkbox__agree" id="agreePass" type="checkbox" name="agree">
+                                I agree all statements in Terms of service
+                            </label>
+                        </div>
+
+                        <div class="block__button">
+                            <input type="submit" class="button__submit" name="buttonSubmit" value="Sign in">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="created__account created">
+                <div class="created__wrapper">
+                    <div class="created__above">
+                        <div class="created__icon">
+                            <img src="" alt="image">
+                        </div>
+                    </div>
+
+                    <div class="created__name-surname">haven`t info</div>
+                    <div class="created__email">haven`t info</div>
+                    <div class="created__position">haven`t info</div>
+                    <div class="created__button">
+                        <input class="button__signout" type="button" name="signOut" value="Sign out">
+                    </div>
+                    <div class="created__links">
+                        <ul class="link__list">
+                            <li class="link facebook">
+                                <a href="#">
+                                    <img src="./img/facebook.png" alt="facebook">
+                                </a>
+                            </li>
+                            <li class="link github">
+                                <a href="#">
+                                    <img src="./img/github.png" alt="github">
+                                </a>
+                            </li>
+                            <li class="link linkidin">
+                                <a href="#">
+                                    <img src="./img/linkedin.png" alt="linkedin">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
