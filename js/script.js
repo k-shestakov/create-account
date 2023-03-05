@@ -5,6 +5,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form');
     form.subButton.addEventListener('click', formSend);
 
+    //============ adaptive hide form ============================================================================================================================================
+    const desctopForm = document.querySelector('.form__info-right_desctop');
+    const mobileForm = document.querySelector('.form__info-right_mobile')
+    if (window.innerWidth <= 750) {
+        if (window.innerWidth <= 450) {
+            mobileForm.add();
+            mobileForm.remove();
+        }
+        desctopForm.remove();
+    }
+    if (window.innerWidth > 750) {
+        mobileForm.remove();
+    }
+    // if (window.innerWidth > 750) {
+    //     mobileForm.remove();
+    // }
+
     // =============== validation form ==========================================================================================================================
     async function formSend(e) {
 

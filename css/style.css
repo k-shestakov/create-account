@@ -100,6 +100,23 @@ input:-webkit-autofill:focus {
 	-webkit-text-fill-color: #fff;
 	transition: background-color 5000s ease-in-out 0s;
 }
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #292F5F;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f06161;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  
+}
 
 .input::placeholder {
 	color: #4D5482;
@@ -180,6 +197,7 @@ input:-webkit-autofill:focus {
 	height: 100%;
 	opacity: 0;
 	font-size: 0;
+	z-index: 2;
 }
 .file-image__button {
 	background-color: #f06161;
@@ -203,21 +221,21 @@ input:-webkit-autofill:focus {
 	justify-content: center;
 	align-items: center;
 }
-.file__preview::after {
-	content: 'PHOTO';
-	position: absolute;
-	z-index: 1;
-}
+
 .file__preview img{
 	max-width: 100%;
 	min-width: 100%;
 	max-height: 250px;
 	height: 100%;
 	object-fit: cover;
-	position: relative;
-	z-index: 5;
+	/* position: relative; */
+	z-index: 1;
 }
-
+.file__preview::before {
+	content: 'PHOTO';
+	position: absolute;
+	/* z-index: -1; */
+}
 
 
 .form__inputs {
@@ -400,6 +418,139 @@ input:-webkit-autofill:focus {
 	cursor: not-allowed;
 }
 
+/* ============  adaptive account__form ============================================================================================================================================ */
+.form__info-right_mobile {
+	display: none !important; 
+}
+
+ 
+@media (max-width: 900px) {
+	.form__wrapper {
+		padding: 32px 44px;
+	}
+	.form__row {
+		margin: 0px -15px;
+	}
+	.form__info {
+		padding: 0px 15px;
+	}
+	.form__image {
+		padding: 0px 15px;
+	}
+}
+@media (max-width: 800px) {
+	.form__wrapper {
+		padding: 32px 34px;
+	}
+	.form__row {
+		margin: 0px -12px;
+	}
+	.form__info {
+		padding: 0px 12px;
+	}
+	.form__image {
+		padding: 0px 12px;
+	}
+}
+@media (max-width: 750px) {
+	.form__info-right_desctop {
+		display: none !important; 
+	}
+	.form__info-right_mobile {
+		display: block !important; 
+	}
+	.form__wrapper {
+		padding: 32px 34px;
+	}
+	.form__row {
+		display: flex;
+		margin: 0px -12px;
+		margin-bottom: 20px;
+	}
+	.form__info {
+		padding: 0px 12px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.form__image {
+		flex: 0 1 40%;
+		padding: 0px 12px;
+	}
+
+
+	.form__inputs {
+		flex: 0 1 60%;
+		display: flex;
+	}
+	.form__info-left {
+		flex: 0 1 100%;
+	}
+
+	.form__area-wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+	.textarea__wrapper {
+		flex: 0 1 60%;
+		margin-bottom: 25px;
+	}
+	.form__area {
+		min-height: 100%;
+	}
+	.form__info-right {
+		flex: 0 1 40%;
+		padding: 0;
+		margin-left: 15px;
+	}
+}
+@media (max-width: 600px) {
+	.form__wrapper {
+		padding: 32px 20px;
+	}
+} 
+@media (max-width: 550px) {
+	.form__wrapper {
+		padding: 32px 20px;
+	}
+	.form__image {
+		flex: 0 1 50%;
+	}
+	.form__inputs {
+		flex: 0 1 50%;
+	}
+} 
+@media (max-width: 450px) {
+	.form__wrapper {
+		padding: 20px;
+	}
+	.form__info-right_desctop {
+		display: block !important; 
+	}
+	.form__info-right_mobile {
+		display: none !important; 
+	}
+	.textarea__wrapper {
+		flex: 0 1 100%;
+		margin-bottom: 25px;
+	}
+	.form__row {
+		display: block;
+	}
+	.form__image {
+		
+	}
+	.form__inputs {
+		display: block;
+		margin-top: 20px;
+	}
+	.form__info-right {
+		margin-top: 20px;
+		padding: 0px 12px;
+		margin-left: 0px;
+	}
+}
+
 /* ================ customize counter ======================================================================================================================================== */
 .quantity {
 	position: relative;
@@ -431,7 +582,7 @@ input:-webkit-autofill:focus {
 	border-radius: 4px;
 	padding-right: 50px;
   }
-  
+ 
   .quantity input:focus {
 	outline: 0;
   }
@@ -462,6 +613,22 @@ input:-webkit-autofill:focus {
 	-ms-user-select: none;
 	-o-user-select: none;
 	user-select: none;
+  }
+  @media (max-width: 550px) {
+	.quantity input {
+		width: 100%;
+	}
+	.quantity-button  {
+		width: 40px;
+	}
+  }
+  @media (max-width: 450px) {
+	.quantity input {
+		width: 50%;
+	}
+	.quantity-button  {
+		width: 30px;
+	}
   }
   
   .quantity-button:active {
@@ -539,7 +706,7 @@ input:-webkit-autofill:focus {
 	background: #F06162;
 	border-radius: 7px;
 	padding: 5px 15px;
-	margin-right: 10px;
+	/* margin-right: 10px; */
 }
 .info__title {
 	font-weight: 700;
@@ -606,21 +773,43 @@ input:-webkit-autofill:focus {
 	width: 100%;
 }
 
-/* =========== customize scrollbar ============================================================================================================================================= */
-::-webkit-scrollbar {
-    width: 3px;
-}
+/* =========== adaptive info ============================================================================================================================================= */
+@media (max-width: 760px) {
+	.info__row {
+		display: flex;
+		flex-direction: column;
+	}
+	.info__image {
+		max-width: 100%;
+		max-height: 250px;
+		position: relative;
+		flex: 0 0 250px;
+	}
+	.info__image img {
+		width: 100%;
+	}
+	.info__image::after {
+		content: '';
+		position: absolute;
+		width: 24px;
+		height: 65px;
+		top: -30px;
+		right: 50px;
+		background: #F06162;
+	}
+	.info__content {
+		margin-left: 0px;
+		margin-top: 20px;
+	}
 
-::-webkit-scrollbar-track {
-    background: #292F5F;
-    box-shadow: 0 0 2px rgba(0, 0, 0, .2) inset;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #f06161;
-    border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  
-}
+	.info_main {
+		padding: 4px 12px;
+		margin-right: 0px;
+	}
+	.info__name-lang {
+		font-size: 16px;
+	}
+	.info__text {
+		font-size: 14px;
+	}
+} 
