@@ -2,113 +2,166 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900&display=swap"
-        rel="stylesheet" />
+	<title>Create account</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800&display=swap"
+		rel="stylesheet" />
+
+
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <div class="container">
+	<div class="wrapper">
+		<div class="container">
+			<!-- form -->
+			<div class="account__form">
+				<form class="account__wrapper form" id="form" action="#" name="form">
+					<div class="form__wrapper">
+						<div class="form__row">
+							<div class="form__image file">
+								<input id="formImage" accept=".jpg, .png, .gif" type="file" name="userImage"
+									class="input__image input">
+								<div id="formPreview" class="file__preview">
+									<img class="default" src="./img/user.jpg" alt="user photo">
+									<!-- <div class="decor">PHOTO</div> -->
+								</div>
+								<!-- <button class="file-image__button">Choose</button> -->
+							</div>
+							<div class="form__inputs">
+								<div class="form__info-left form__info">
+									<div class="input__inner-name">
+										<div class="input__name input__title">Name</div>
+										<input tabindex="1" class="input__name input _req" placeholder="your name..."
+											type="text" name="userName" value="">
+									</div>
+									<div class="input__inner-gender">
+										<div class="input__gender input__title">Gender</div>
+										<input checked class="input__gender" id="genderMale" type="radio"
+											name="userGender" value="male">
+										<label class="input__gender-custom" for="genderMale">
+											<span>male</span>
+										</label>
+										<input class="input__gender" id="genderFemale" type="radio" name="userGender"
+											value="female">
+										<label class="input__gender-custom" for="genderFemale">
+											<span>female</span>
+										</label>
+									</div>
+									<div class="input__inner-age">
+										<div class="input__age input__title">Age</div>
+										<!-- <input tabindex="6" class="input _req" type="number" min="1" max="99"
+											name="userAge"> -->
+										<div class="quantity">
+											<input type="number" min="1" max="99" step="1" value="18" class="input"
+												name="userAge">
+										</div>
 
-            <div class="form__wrapper">
-                <div class="form__title">
-                    Create you account
-                </div>
-                <div class="form__form">
-                    <form name="create" class="form-action">
-                        <div class="firstName">
-                            <p class="firstName__title option">First Name</p>
-                            <input required class="input" placeholder="type here..." type="text" name="firstName">
-                        </div>
-                        <div class="secondName">
-                            <p class="secondName__title option">Second Name</p>
-                            <input required class="input" placeholder="type here..." type="text" name="secondName">
-                        </div>
-                        <div class="userEmail">
-                            <p class="userEmail__title option">Email address</p>
-                            <input class="input" placeholder="enter email" type="email" name="userEmail" required>
-                        </div>
-                        <div class="radioSex">
-                            <label class="sex" for="menSex">
-                                <input class="sex__input" checked id="menSex" type="radio" name="sex" value="man">
-                                man
-                            </label>
-                            <label class="sex" for="womenSex">
-                                <input class="sex__input" id="womenSex" type="radio" name="sex" value="women">
-                                women
-                            </label>
-                        </div>
-                        <div class="selectPosition">
-                            <p class="position__title option">Position</p>
-                            <select class="select__position" name="position">
-                                <option selected value="non">Choose...</option>
-                                <option value="frond-end">Front-end</option>
-                                <option value="back-end">Back-end</option>
-                                <option value="qc-qa">QC/QA</option>
-                            </select>
-                        </div>
-                        <div class="checkboxAgree">
-                            <label for="agreePass" style="cursor: pointer;">
-                                <input class="checkbox__agree" id="agreePass" type="checkbox" name="agree">
-                                I agree all statements in Terms of service
-                            </label>
-                        </div>
+									</div>
 
-                        <div class="block__button">
-                            <input type="submit" class="button__submit" name="buttonSubmit" value="Sign in">
-                        </div>
-                    </form>
-                </div>
-            </div>
+								</div>
+								<div class="form__info-right form__info">
+									<div class="input__inner-surname">
+										<div class="input__surname input__title">Surname</div>
+										<input tabindex="2" class="input _req" placeholder="your surname..." type="text"
+											name="userSurname" value="">
+									</div>
+									<div class="input__inner-email">
+										<div class="input__email input__title">E-mail</div>
+										<input tabindex="3" class="input _req _email" placeholder="your email..."
+											type="text" name="userEmail" value="">
+									</div>
+									<div class="input__inner-language">
+										<div class="input__language input__title">Programming language</div>
+										<select tabindex="4" class="inupt__section input" name="language">
+											<option value="language_none">Not programmer</option>
+											<option value="language_c">C</option>
+											<option value="language_cpp">C++</option>
+											<option value="language_java">Java</option>
+											<option value="language_js">JavaScript</option>
+											<option value="language_php">PHP</option>
+											<option value="language_python">Python</option>
+											<option value="language_swift">Swift</option>
+											<option value="language_delphi">Delphi</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form__area-wrapper">
+							<div class="form__area-title input__title">Description yourself</div>
+							<textarea tabindex="7" placeholder="Discription..." class="input form__area "
+								name="userDescription"></textarea>
+						</div>
+						<div class="form__agree">
+							<input class="form__agree-input" id="agreeCheck" type="checkbox" name="userAgree">
+							<label for="agreeCheck" class="form__label-wrapper">
+								<p class="form__agree-text">I agree with political company. <a href="#"><span
+											class="light_red">Learn
+											more</span></a></p>
+							</label>
 
-            <div class="created__account created">
-                <div class="created__wrapper">
-                    <div class="created__above">
-                        <div class="created__icon">
-                            <img src="" alt="image">
-                        </div>
-                    </div>
+						</div>
+						<div class="form__buttons">
+							<div class="button__reset-wrapper button__inner">
+								<button class="button__reset button" type="reset">reset</button>
+							</div>
+							<div class="button__submit-wrapper button__inner">
+								<input class="button__submit button" name="subButton" type="submit" disabled>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
 
-                    <div class="created__name-surname">haven`t info</div>
-                    <div class="created__email">haven`t info</div>
-                    <div class="created__position">haven`t info</div>
-                    <div class="created__button">
-                        <input class="button__signout" type="button" name="signOut" value="Sign out">
-                    </div>
-                    <div class="created__links">
-                        <ul class="link__list">
-                            <li class="link facebook">
-                                <a href="#">
-                                    <img src="./img/facebook.png" alt="facebook">
-                                </a>
-                            </li>
-                            <li class="link github">
-                                <a href="#">
-                                    <img src="./img/github.png" alt="github">
-                                </a>
-                            </li>
-                            <li class="link linkidin">
-                                <a href="#">
-                                    <img src="./img/linkedin.png" alt="linkedin">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+			<!-- info -->
+			<div class="info">
+				<div class="info__wrapper">
+					<div class="info__row">
+						<div class="info__image">
+							<img class="default" src="./img/user.jpg" alt="user photo">
+						</div>
+						<div class="info__content">
+							<div class="info__name-lang">
+								<div class="info__name info_main">User 123456</div>
+								<div class="info__lang info_main">Not programmer</div>
+								<div class="info__email info__title info_main">Email: <span
+										class="info__emailUser info__text">www.www@gmail.com</span>
+								</div>
+								<div class="info__gender info__title info_main">Gender: <span
+										class="info__genderUser info__text">man</span></div>
+								<div class="info__age info__title info_main">Age: <span
+										class="info__ageUser info__text">19
+										year</span></div>
+								<div class="info__desc">
+									<div class="desc__title info__title info_main">Description: <span
+											class="desc__description info__text">
 
-        </div>
-    </div>
+										</span></div>
 
+								</div>
+							</div>
+							<div class="info__button">
+								<div class="info__button-wrapper-back button_user">
+									<button class="info__button-back button">back</button>
+								</div>
+								<div class="info__button-wrapper-apply button_user">
+									<button class="info__button-apply button">apply</button>
+								</div>
+							</div>
+						</div>
+					</div>
 
-    <script src="js/script.js"></script>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./js/script.js"></script>
+
 
 </body>
-
-</html>
