@@ -7,10 +7,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //============ adaptive hide form ============================================================================================================================================
     const desctopForm = document.querySelector('.form__info-right_desctop');
-    const mobileForm = document.querySelector('.form__info-right_mobile')
+    const mobileForm = document.querySelector('.form__info-right_mobile');
+
+    const mainForm = document.querySelector('.form__inputs');
     if (window.innerWidth <= 750) {
         if (window.innerWidth <= 450) {
-            mobileForm.add();
+            // leftForm.after();
+            mainForm.innerHTML = `<div class="form__info-left form__info">
+            <div class="input__inner-name">
+                <div class="input__name input__title">Name</div>
+                <input tabindex="1" class="input__name input _req" placeholder="your name..."
+                    type="text" name="userName" value="">
+            </div>
+            <div class="input__inner-gender">
+                <div class="input__gender input__title">Gender</div>
+                <input checked class="input__gender" id="genderMale" type="radio"
+                    name="userGender" value="male">
+                <label class="input__gender-custom" for="genderMale">
+                    <span>male</span>
+                </label>
+                <input class="input__gender" id="genderFemale" type="radio" name="userGender"
+                    value="female">
+                <label class="input__gender-custom" for="genderFemale">
+                    <span>female</span>
+                </label>
+            </div>
+            <div class="input__inner-age">
+                <div class="input__age input__title">Age</div>
+                <!-- <input tabindex="6" class="input _req" type="number" min="1" max="99"
+                    name="userAge"> -->
+                <div class="quantity">
+                    <input type="number" min="1" max="99" step="1" value="18" class="input"
+                        name="userAge">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="form__info-right form__info form__info-right_desctop">
+            <div class="input__inner-surname">
+                <div class="input__surname input__title">Surname</div>
+                <input tabindex="2" class="input _req" placeholder="your surname..." type="text"
+                    name="userSurname" value="">
+            </div>
+            <div class="input__inner-email">
+                <div class="input__email input__title">E-mail</div>
+                <input tabindex="3" class="input _req _email" placeholder="your email..."
+                    type="text" name="userEmail" value="">
+            </div>
+            <div class="input__inner-language">
+                <div class="input__language input__title">Programming language</div>
+                <select tabindex="4" class="inupt__section input" name="language">
+                    <option value="language_none">Not programmer</option>
+                    <option value="language_c">C</option>
+                    <option value="language_cpp">C++</option>
+                    <option value="language_java">Java</option>
+                    <option value="language_js">JavaScript</option>
+                    <option value="language_php">PHP</option>
+                    <option value="language_python">Python</option>
+                    <option value="language_swift">Swift</option>
+                    <option value="language_delphi">Delphi</option>
+                </select>
+            </div>
+        </div>`;
             mobileForm.remove();
         }
         desctopForm.remove();
